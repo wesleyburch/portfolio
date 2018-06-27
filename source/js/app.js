@@ -8,3 +8,12 @@ window.sr = ScrollReveal();
 //     origin: 'bottom',
 //     distance: '100px' 
 // });
+
+function toggleHide(){
+  hiddenText = document.getElementsByClassName("hidden");
+  if(hiddenText.style.visibility === "hidden"){
+    hiddenText.style.visibility = "visible";
+  } else {
+    hiddenText.style.display = "hidden"
+  }
+}

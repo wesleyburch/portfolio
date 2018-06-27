@@ -1,1 +1,1 @@
-window.sr=ScrollReveal();
+function toggleHide(){hiddenText=document.getElementsByClassName("hidden"),"hidden"===hiddenText.style.visibility?hiddenText.style.visibility="visible":hiddenText.style.display="hidden"}window.sr=ScrollReveal();

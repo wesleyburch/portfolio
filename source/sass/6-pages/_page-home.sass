@@ -11,6 +11,8 @@ body
   color: #5a5959
   position: absolute
   top: 345px
+  @media only screen and (max-width: 680px)
+    visibility: hidden
 
 .contact-me-link-left
   left: 10px
@@ -46,6 +48,9 @@ body
     font-size: 25px
     padding-left: 15px
     line-height: .7em
+    @media only screen and (max-width: 480px)
+      font-size: 1em
+      padding-left: 5px
   
   .alt-color-word
     color: #797152
@@ -61,66 +66,134 @@ body
   border-style: solid;
   border-width: 30px 30px 0 30px;
   border-color: #797152 transparent transparent transparent;
+  @media only screen and (max-width: 480px)
+    border-width: 20px 20px 0 20px
 
 h1
   margin-bottom: 5px
-h4
-  margin-top: 100px
+  @media only screen and (max-width: 480px)
+    margin-top: 50%
+  
+
+
+//**************************************************\\
+//**************** END HERO SECTION ****************\\
+//**************************************************\\
 
 .fade-in
   
+//**************************************************\\
+//**************** PROJECT SECTION *****************\\
+//**************************************************\\
+
+#portfolio-section
+  margin-top: 50px
+  width: 80%
+  @media only screen and (max-width: 380px)
+    width: 100%
+
+.section-header
+  padding-top: 25px
+  width: 80%
+  margin: 0 auto 100px auto
+  text-align: center
+  color: #1b1b1b
+  font-weight: 900
+  background-color: #fdd835
+  padding-bottom: 80px
+  clip-path: polygon(0 0, 100% 0, 100% 52%, 0% 100%)
+  border-radius: 0 0 5px 0
+  @media only screen and (max-width: 380px)
+    width: 100%
+    margin-bottom: 50px
+    font-size: 30px
 
 .section-wrapper
   width: 100%
-  padding: 0 0 200px 0px 
-  text-align: left
+  padding: 0 0 150px 0px 
   margin-left: auto
   margin-right: auto
-
-  h1
-    float: left
-    text-align: left
-    margin-top: 0
-    padding-left: 0
-    margin-right: 100px
+  @media only screen and (max-width: 480px)
+    padding-bottom: 100px
 
   p 
     clear: both
     font-size: 1.25em
     line-height: 1.25em
+    display: none
+
+.projects-header
+    margin-top: 0
+    margin: 0
+    text-transform: uppercase
 
 .project
     position: relative
     max-width: 80%
     margin-right: auto
     margin-left: auto
+    padding: 10px 10px
+    &:hover
+      background-color: #3b3b3b
 
     .triangle
       content: " "
       position: absolute
       right: 4%
-      top: 22%
+      top: 35%
       display: inline-block
       width: 0
       height: 0
       border-style: solid
       border-width: 15px 0 15px 20px
       border-color: transparent transparent transparent #797152;
-
+      @media only screen and (max-width: 680px)
+        border-width: 10px 0 10px 15px
+        top: 28%
+      @media only screen and (max-width: 550px)
+        visibility: hidden
     .skill-tags
-      padding-top: 10px
       clear: both
       display: flex
       flex-direction: row
       padding-left: 0px
+      margin-top: 4px
+      margin-bottom: 4px
 
       li  
+        font-size: .75em
         list-style: none
         color: #fff
-        padding: 5px
+        padding: 4px
         background-color: #797152
-        border-radius: 4px
-        margin-right: 5px
+        clip-path: polygon(0% 5px,5px 0%,calc(100% - 5px) 0%, 100% 5px, 100% calc(100% - 5px),calc(100% - 5px) 100%, 5px 100%, 0 calc(100% - 5px) )
+        // border-radius: 0 4px 0 4px
+        margin-right: 2px
+
+//**************************************************\\
+//************** SOCIAL LINKS SECTION **************\\
+//**************************************************\\
+
+.social-section
+  text-align: center
+  margin-top: 50px
+  width: 80%
+  @media only screen and (max-width: 380px)
+    width: 100%
+
+#github 
+  margin-left: auto
+  margin-right: 150px
+  @media only screen and (max-width: 680px)
+    margin-right: 75px
+
+.social-icon
+  max-width: 200px
+  max-height: 200px
+  @media only screen and (max-width: 680px)
+    margin-bottom: 50px
+
+
 
 
     
