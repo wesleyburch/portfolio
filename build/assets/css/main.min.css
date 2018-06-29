@@ -209,18 +209,19 @@ input[type="reset"],
 input[type="button"] {
   display: inline-block;
   padding: 10px 40px;
-  color: black;
+  color: #1B1B1B;
   text-align: center;
-  font-size: 14px;
+  font-size: 20px;
   font-weight: 600;
   text-transform: uppercase;
   text-decoration: none;
   white-space: nowrap;
-  background-color: #5a5959;
-  border-radius: 4px;
+  background-color: #fdd835;
+  border-radius: 5px;
   cursor: pointer;
   box-sizing: border-box;
-  transition: all 0.2s ease; }
+  transition: all 0.2s ease;
+  width: 250px; }
   .button:hover, .button:active, .button:focus,
   button:hover,
   button:active,
@@ -237,13 +238,6 @@ input[type="button"] {
     outline: 0;
     transform: scale(1.01);
     transform: translateY(3px); }
-
-a {
-  color: #0074D9;
-  text-decoration: none;
-  outline: 0; }
-  a:hover, a:focus {
-    color: #F012BE; }
 
 ::selection {
   background: #FFF498; }
@@ -332,23 +326,6 @@ hr {
   margin: 10px 0 30px;
   height: 0; }
 
-.flex-video {
-  height: 0;
-  margin-bottom: 0.88889rem;
-  overflow: hidden;
-  padding-bottom: 56%;
-  position: relative; }
-
-.flex-video iframe,
-.flex-video object,
-.flex-video embed,
-.flex-video video {
-  height: 100%;
-  position: absolute;
-  top: 0;
-  width: 100%;
-  left: 0; }
-
 body {
   height: 100%;
   display: flex;
@@ -360,8 +337,9 @@ body {
 .contact-me-link-left, .contact-me-link-right {
   font-size: .90em;
   color: #5a5959;
-  position: absolute;
-  top: 345px; }
+  position: fixed;
+  top: 345px;
+  z-index: 1; }
   @media only screen and (max-width: 680px) {
     .contact-me-link-left, .contact-me-link-right {
       visibility: hidden; } }
@@ -388,6 +366,9 @@ body {
 #page-home, #portfolio-section {
   margin: 20px;
   display: flex; }
+
+.intro-text {
+  opacity: 0; }
 
 .wrapper-starter {
   width: 100%;
@@ -427,9 +408,17 @@ h1 {
     h1 {
       margin-top: 50%; } }
 
+.rotate {
+  transition-duration: .250s; }
+
+.rotate-on-click {
+  transform: rotate(90deg);
+  -webkit-transform: rotate(90deg);
+  -ms-transform: rotate(90deg); }
+
 #portfolio-section {
   margin-top: 50px;
-  width: 80%; }
+  width: 100%; }
   @media only screen and (max-width: 380px) {
     #portfolio-section {
       width: 100%; } }
@@ -437,14 +426,15 @@ h1 {
 .section-header {
   padding-top: 25px;
   width: 80%;
-  margin: 0 auto 100px auto;
+  margin: 0 auto 75px auto;
   text-align: center;
   color: #1b1b1b;
   font-weight: 900;
   background-color: #fdd835;
   padding-bottom: 80px;
-  clip-path: polygon(0 0, 100% 0, 100% 52%, 0% 100%);
-  border-radius: 0 0 5px 0; }
+  clip-path: polygon(100% 0, 100% 50%, 50% 100%, 0 50%, 0 0);
+  border-radius: 0 0 5px 0;
+  opacity: 0; }
   @media only screen and (max-width: 380px) {
     .section-header {
       width: 100%;
@@ -458,7 +448,7 @@ h1 {
   margin-right: auto; }
   @media only screen and (max-width: 480px) {
     .section-wrapper {
-      padding-bottom: 100px; } }
+      padding-bottom: 50px; } }
   .section-wrapper p {
     clear: both;
     font-size: 1.25em;
@@ -468,20 +458,24 @@ h1 {
 .projects-header {
   margin-top: 0;
   margin: 0;
-  text-transform: uppercase; }
+  text-transform: uppercase;
+  letter-spacing: .030px; }
 
 .project {
   position: relative;
-  max-width: 80%;
+  max-width: 100%;
   margin-right: auto;
   margin-left: auto;
-  padding: 10px 10px; }
+  padding: 10px 150px 10px 150px; }
   .project:hover {
     background-color: #3b3b3b; }
+  @media only screen and (max-width: 680px) {
+    .project {
+      padding: 10px 25px; } }
   .project .triangle {
     content: " ";
     position: absolute;
-    right: 4%;
+    right: 10%;
     top: 35%;
     display: inline-block;
     width: 0;
@@ -492,8 +486,9 @@ h1 {
     @media only screen and (max-width: 680px) {
       .project .triangle {
         border-width: 10px 0 10px 15px;
-        top: 28%; } }
-    @media only screen and (max-width: 550px) {
+        top: 28%;
+        right: 25px; } }
+    @media only screen and (max-width: 380px) {
       .project .triangle {
         visibility: hidden; } }
   .project .skill-tags {
@@ -502,20 +497,23 @@ h1 {
     flex-direction: row;
     padding-left: 0px;
     margin-top: 4px;
-    margin-bottom: 4px; }
+    margin-bottom: 4px;
+    text-align: center; }
     .project .skill-tags li {
       font-size: .75em;
+      width: 70px;
       list-style: none;
       color: #fff;
       padding: 4px;
       background-color: #797152;
-      clip-path: polygon(0% 5px, 5px 0%, calc(100% - 5px) 0%, 100% 5px, 100% calc(100% - 5px), calc(100% - 5px) 100%, 5px 100%, 0 calc(100% - 5px));
-      margin-right: 2px; }
+      clip-path: polygon(0% 5px, 0px 0%, calc(100% - 5px) 0%, 100% 0px, 100% calc(100% - 5px), calc(100% - 5px) 100%, 0px 100%, 0 calc(100% - 5px));
+      margin-right: 5px; }
 
 .social-section {
   text-align: center;
   margin-top: 50px;
-  width: 80%; }
+  height: 700px;
+  width: 100%; }
   @media only screen and (max-width: 380px) {
     .social-section {
       width: 100%; } }
@@ -533,3 +531,34 @@ h1 {
   @media only screen and (max-width: 680px) {
     .social-icon {
       margin-bottom: 50px; } }
+
+.contact-section {
+  margin-top: 50px;
+  width: 100%; }
+  @media only screen and (max-width: 380px) {
+    .contact-section {
+      width: 100%; } }
+  .contact-section form {
+    width: 60%;
+    margin: 0 auto; }
+    .contact-section form label {
+      text-align: left;
+      color: #797152;
+      font-weight: 900;
+      font-size: 50px;
+      display: inline-block;
+      width: 100%;
+      padding-top: 8px;
+      padding-bottom: 8px; }
+  .contact-section input[type=text], .contact-section input[type=email], .contact-section textarea {
+    width: 100%;
+    line-height: 50px;
+    font-size: 50px;
+    border: none;
+    border-radius: 4px;
+    background-color: #5a5959;
+    text-align: center; }
+
+#btn-container {
+  margin-top: 25px;
+  text-align: center; }
