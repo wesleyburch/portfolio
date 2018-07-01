@@ -489,10 +489,6 @@ h1 {
   @media only screen and (max-width: 680px) {
     .project {
       padding: 10px 25px; } }
-  .project a {
-    text-decoration: none;
-    color: #FBD655;
-    display: block; }
   .project .triangle {
     content: " ";
     position: absolute;
@@ -555,12 +551,12 @@ h1 {
 .contact-section {
   margin-top: 50px;
   width: 100%; }
+  @media only screen and (max-width: 380px) {
+    .contact-section {
+      width: 100%; } }
   .contact-section form {
     width: 60%;
     margin: 0 auto; }
-    @media only screen and (max-width: 380px) {
-      .contact-section form {
-        width: 100%; } }
     .contact-section form label {
       text-align: left;
       color: #797152;
@@ -570,9 +566,6 @@ h1 {
       width: 100%;
       padding-top: 8px;
       padding-bottom: 8px; }
-      @media only screen and (max-width: 380px) {
-        .contact-section form label {
-          font-size: 30px; } }
   .contact-section input[type=text], .contact-section input[type=email], .contact-section textarea {
     width: 100%;
     line-height: 50px;
@@ -581,10 +574,6 @@ h1 {
     border-radius: 4px;
     background-color: #5a5959;
     text-align: center; }
-    @media only screen and (max-width: 380px) {
-      .contact-section input[type=text], .contact-section input[type=email], .contact-section textarea {
-        line-height: 40px;
-        font-size: 30px; } }
 
 #btn-container {
   margin-top: 25px;
