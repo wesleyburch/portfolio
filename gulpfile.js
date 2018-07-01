@@ -17,13 +17,13 @@ var autoprefixer = require('gulp-autoprefixer'),
 
 // paths
 var styleSrc = 'source/sass/**/*.sass',
-    styleDest = 'build/assets/css/',
+    styleDest = 'assets/css/',
     htmlSrc = 'source/',
-    htmlDest = 'build/',
+    htmlDest = '/',
     vendorSrc = 'source/js/vendors/',
-    vendorDest = 'build/assets/js/',
+    vendorDest = 'assets/js/',
     scriptSrc = 'source/js/*.js',
-    scriptDest = 'build/assets/js/';
+    scriptDest = 'assets/js/';
 
 
 
@@ -44,13 +44,13 @@ gulp.task('sass', function() {
             suffix: '.min'
           }))
 
-        .pipe(gulp.dest('build/assets/css'));
+        .pipe(gulp.dest('assets/css'));
 });
 
 gulp.task('images', function() {
     gulp.src('source/img/*')
         .pipe(images())
-        .pipe(gulp.dest('build/assets/img'));
+        .pipe(gulp.dest('assets/img'));
 });
 
 // Uglify js files
@@ -58,7 +58,7 @@ gulp.task('scripts', function() {
     gulp.src('source/js/*.js')
         .pipe(plumber())
         .pipe(uglify())
-        .pipe(gulp.dest('build/assets/js'));
+        .pipe(gulp.dest('assets/js'));
 });
 
 //Concat and Compress Vendor .js files
@@ -71,7 +71,7 @@ gulp.task('vendors', function() {
         .pipe(plumber())
         .pipe(concat('vendors.js'))
         .pipe(uglify())
-        .pipe(gulp.dest('build/assets/js'));
+        .pipe(gulp.dest('assets/js'));
 });
 
 
@@ -82,7 +82,7 @@ gulp.task('watch', function(){
     // Serve files from the root of this project
     browserSync.init({
         server: {
-            baseDir: "./build"
+            baseDir: "."
         },
         notify: false
     });
@@ -90,7 +90,7 @@ gulp.task('watch', function(){
     gulp.watch(styleSrc,['sass']);
     gulp.watch(scriptSrc,['scripts']);
     gulp.watch(vendorSrc,['vendors']);
-    gulp.watch(['build/*.html', 'build/assets/css/*.css', 'build/assets/js/*.js', 'build/assets/js/vendors/*.js']).on('change', browserSync.reload);
+    gulp.watch(['*.html', 'assets/css/*.css', 'assets/js/*.js', 'assets/js/vendors/*.js']).on('change', browserSync.reload);
 
 });
 
