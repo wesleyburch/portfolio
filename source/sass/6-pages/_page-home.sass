@@ -176,6 +176,10 @@ h1
       cursor: pointer
     @media only screen and (max-width: 680px)
       padding: 10px 25px
+    a 
+      text-decoration: none
+      color: #FBD655
+      display: block
 
     .triangle
       content: " "
@@ -255,13 +259,12 @@ h1
 .contact-section
   margin-top: 50px
   width: 100%
-  @media only screen and (max-width: 380px)
-    width: 100%
 
   form 
     width: 60%
     margin: 0 auto
-
+    @media only screen and (max-width: 380px)
+      width: 100%
     label 
       text-align: left;
       color: #797152;
@@ -271,6 +274,8 @@ h1
       width: 100%;
       padding-top: 8px
       padding-bottom: 8px
+      @media only screen and (max-width: 380px)
+        font-size: 30px
 
   input[type=text], input[type=email], textarea 
     width: 100%
@@ -280,6 +285,9 @@ h1
     border-radius: 4px
     background-color: #5a5959
     text-align: center
+    @media only screen and (max-width: 380px)
+      line-height: 40px
+      font-size: 30px
     
 
 #btn-container
