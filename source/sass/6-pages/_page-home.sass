@@ -70,11 +70,16 @@ body
   width: 0;
   height: 0;
   border-style: solid;
-  border-width: 30px 30px 0 30px;
+  border-width: 30px 30px 0 30px
   border-color: #797152 transparent transparent transparent;
+  animation: pulse 1s 6
   @media only screen and (max-width: 480px)
     border-width: 20px 20px 0 20px
 
+@keyframes pulse    
+  100% 
+    top: 640px
+  
 h1
   margin-bottom: 5px
   @media only screen and (max-width: 480px)
@@ -86,8 +91,8 @@ h1
 //**************** END HERO SECTION ****************\\
 //**************************************************\\
 
-.fade-in
 
+// Animations
 
 .rotate 
   transition-duration: .250s
@@ -96,6 +101,8 @@ h1
   transform: rotate(90deg);
   -webkit-transform: rotate(90deg);
   -ms-transform: rotate(90deg);
+
+
 
   
 //**************************************************\\
@@ -111,23 +118,37 @@ h1
 .section-header
   padding-top: 25px
   width: 80%
-  margin: 0 auto 75px auto
+  margin: 0 auto
   text-align: center
-  color: #1b1b1b
+  color: #fdd835
+  position: relative
+  // color: #1b1b1b
   font-weight: 900
-  background-color: #fdd835
-  padding-bottom: 80px
-  clip-path: polygon(100% 0, 100% 50%, 50% 100%, 0 50%, 0 0)
+  // background-color: #fdd835
+  padding-bottom: 25px
+  // clip-path: polygon(100% 0, 100% 50%, 50% 100%, 0 50%, 0 0)
   border-radius: 0 0 5px 0
   opacity: 0
   @media only screen and (max-width: 380px)
     width: 100%
-    margin-bottom: 50px
     font-size: 30px
+  
+.header-border
+  border-bottom: solid 5px #645D47
+  width: 100%
+  margin-left: auto
+  margin-right: auto
+  margin-bottom: 75px
+  -webkit-transition: width 1s ease-out
+  transition: width .75s  ease-out
+
+.grow
+  width: 30%
+  
 
 .section-wrapper
   width: 100%
-  padding: 0 0 150px 0px 
+  padding: 0 0 100px 0px 
   margin-left: auto
   margin-right: auto
   @media only screen and (max-width: 480px)
@@ -150,7 +171,7 @@ h1
     max-width: 100%
     margin-right: auto
     margin-left: auto
-    padding: 10px 150px 10px 150px
+    padding: 30px 150px 30px 150px
     &:hover
       background-color: #3b3b3b
     @media only screen and (max-width: 680px)
@@ -201,7 +222,7 @@ h1
 .social-section
   text-align: center
   margin-top: 50px
-  height: 700px
+  // height: 700px
   width: 100%
   @media only screen and (max-width: 380px)
     width: 100%

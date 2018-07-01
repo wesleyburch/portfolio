@@ -26,7 +26,8 @@ $( document ).ready(function() {
   $(window).scroll(function(){
     // fade out hero triangle
     $(".triangle-hero").css("opacity", 1 - $(window).scrollTop() / 600);
-  
+   
+ 
     $('.wrapper-starter').fadeIn('slow');
     $('.section-header').each( function(i){
               
@@ -37,6 +38,20 @@ $( document ).ready(function() {
       if( bottom_of_window > bottom_of_object ){
           
           $(this).animate({'opacity':'1'},1700);
+              
+      }
+      
+    }); 
+
+    $('.header-border').each( function(i){
+              
+      var bottom_of_object = $(this).position().top + $(this).outerHeight();
+      var bottom_of_window = $(window).scrollTop() + $(window).height();
+      
+      /* If the object is completely visible in the window, change width */
+      if( bottom_of_window > bottom_of_object ){
+          
+          $(this).addClass('grow');
               
       }
       
